@@ -4,9 +4,9 @@
 
 /* Icon (alt) */
 
-	html, body, div, span, applet, object,
+	html, body, div, applet, object,
 	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-	pre, a, abbr, acronym, address, big, cite,
+    a, abbr, acronym, address, big, cite,
 	code, del, dfn, em, img, ins, kbd, q, s, samp,
 	small, strike, strong, sub, sup, tt, var, b,
 	u, i, center, dl, dt, dd, ol, ul, li, fieldset,
@@ -27,9 +27,11 @@
 	footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
-    
+
 	body {
-		line-height: 1;
+        line-height: 1;
+        cursor: text;
+        word-wrap: break-word;
 	}
 
 	ol, ul {
@@ -69,16 +71,60 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-	}
+    }
+    
+    span{
+        text-align: left;
+        margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+        vertical-align: baseline;
+        display: inline-block;
+        position:relative;
+
+    }
+
+    pre{
+        text-align: left;
+        margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+        font: inherit; 
+        white-space: pre;
+        display: block;
+    }
+
+    .comment{
+        color:whitesmoke
+     }
+
+    .keyword{
+        color:yellow
+    }
+
+    .text{color:wheat}
+
+    .text > a {    
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;}
 
 
-/* Basic */
+    .projname{color:lightblue}
+
+
+
+    /* Basic */
 
 	@media screen and (max-width: 480px) {
 
 		html, body {
 			min-width: 320px;
-		}
+        }
+        
 
 	}
 
@@ -102,49 +148,26 @@
 	}
 
 	html {
-		height: 100%;
+        height: 100%;
+        overflow-y: scroll;
 	}
 
 	body {
-		height: 100%;
+        height: 100%;
+        margin: 0;
 		background-color: #ffffff;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
-		background-image: url("images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
-		background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg5.jpg");
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg5.jpg");
+		background-image: url("images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg5.jpg");
+		background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg5.jpg");
 		background-repeat: repeat,			no-repeat,			no-repeat;
 		background-size: 100px 100px, cover,				cover;
 		background-position: top left,		center center,		bottom center;
-		background-attachment: fixed,			fixed,				fixed;
+        background-attachment: fixed,			fixed,				fixed;
+
 	}
 
-		body:after {
-			content: '';
-			display: block;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: inherit;
-			opacity: 0;
-			z-index: 1;
-			background-color: #ffffff;
-			background-image: url("images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-			background-image: url("images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-			background-image: url("images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-			background-image: url("images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-			background-repeat: repeat,			no-repeat;
-			background-size: 100px 100px, cover;
-			background-position: top left,		center center;
-			-moz-transition: opacity 1.75s ease-out;
-			-webkit-transition: opacity 1.75s ease-out;
-			-ms-transition: opacity 1.75s ease-out;
-			transition: opacity 1.75s ease-out;
-		}
-
-		body.is-preload:after {
-			opacity: 1;
-		}
+		
 
 /* Container */
 
@@ -216,7 +239,6 @@
 		font-weight: 300;
 		line-height: 2;
 		letter-spacing: 0.2em;
-		/*text-transform: uppercase;*/
 		text-transform: none;
 	}
 
@@ -237,16 +259,16 @@
 
 		}
 
-	a {
-		-moz-transition: color 0.2s ease, border-color 0.2s ease;
-		-webkit-transition: color 0.2s ease, border-color 0.2s ease;
-		-ms-transition: color 0.2s ease, border-color 0.2s ease;
-		transition: color 0.2s ease, border-color 0.2s ease;
-		color: inherit;
-		text-decoration: none;
-	}
+        a {
+            -moz-transition: color 0.2s ease, border-color 0.2s ease;
+            -webkit-transition: color 0.2s ease, border-color 0.2s ease;
+            -ms-transition: color 0.2s ease, border-color 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            color: inherit;
+            text-decoration: none;
+        }
 
-		a:before {
+        a:before {
 			-moz-transition: color 0.2s ease, text-shadow 0.2s ease;
 			-webkit-transition: color 0.2s ease, text-shadow 0.2s ease;
 			-ms-transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -256,6 +278,8 @@
 		a:hover {
 			color: #ff7496;
 		}
+
+		
 
 	strong, b {
 		color: #313f47;
@@ -1112,6 +1136,8 @@
 			height: 100%;
 		}
 
+
+
 /* Nav */
 
 #nav {
@@ -1177,7 +1203,3 @@
 				border-top: solid 0.6em #131111;
 			}
 
-/* backgrounds */
-.day { background: url("../../images/bg3.jpg"); }
-.sunset { background: url("../../images/bg2.jpg"); }
-.night { background: url("../../images/bg3.jpg"); }
