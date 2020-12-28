@@ -31,7 +31,7 @@
 	body {
         line-height: 1;
         cursor: text;
-        word-wrap: break-word;
+        word-wrap: normal;
 	}
 
 	ol, ul {
